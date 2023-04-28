@@ -23,4 +23,13 @@ public class AlbumService {
         }
     }
 
+    public Album getAlbumByAlbumName(String albumName){
+        Optional<Album> res = albumRepository.findByAlbumName(albumName);
+        if(res.isPresent()){
+            return res.get();
+        }else{
+            throw new EntityNotFoundException(String.format("앨범명 %s로 조회되지 않습니다.",albumName));
+        }
+    }
+
 }
