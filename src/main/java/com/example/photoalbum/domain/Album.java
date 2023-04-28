@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Getter
 @NoArgsConstructor
@@ -23,5 +24,6 @@ public class Album {
     @Column(name = "created_at",unique = false,nullable = true)
     private LocalDateTime createdAt;
 
-
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "album",cascade = CascadeType.ALL)
+    private List<Photo> photos;
 }
