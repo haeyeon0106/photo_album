@@ -2,12 +2,13 @@ package com.example.photoalbum.domain;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@Getter
+@Getter @Setter
 @NoArgsConstructor
 @Entity
 @Table(name = "album", schema = "photo_album",uniqueConstraints = {@UniqueConstraint(columnNames = "album_id")})
