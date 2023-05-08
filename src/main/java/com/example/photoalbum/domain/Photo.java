@@ -1,8 +1,12 @@
 package com.example.photoalbum.domain;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Date;
 
+@Getter @Setter
 @Entity
 @Table(name = "photo",schema = "photo_album",uniqueConstraints = {@UniqueConstraint(columnNames = "photo_id")})
 public class Photo {
